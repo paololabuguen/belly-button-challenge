@@ -122,6 +122,7 @@ d3.json(url).then(function (data) {
             y: plotVal.map(object => object.value),
             x: plotVal.map(object => object.otu_id),
             text: plotVal.map(object => object.otu_labels),
+            
             mode: "markers",
             marker: {
                 size: plotVal.map(object => Math.sqrt(object.value) * 5),
@@ -137,7 +138,12 @@ d3.json(url).then(function (data) {
         let layout = {
             showlegend: false,
             height: 500,
-            width: 1200
+            width: 1200,
+            xaxis: {
+                title:{
+                    text: "OTU ID"
+                }
+            },
         };
 
         // Trace data Array
